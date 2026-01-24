@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moroccan Phone Lookup Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a2e',
+                        secondary: '#16213e',
+                        accent: '#0f3460',
+                        highlight: '#e94560'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-highlight to-blue-400 bg-clip-text text-transparent mb-4">
+                Moroccan Phone Lookup
+            </h1>
+            <p class="text-xl text-gray-300">Professional Network Intelligence Tool</p>
+        </header>
+
+        <!-- Search Section -->
+        <div class="bg-secondary rounded-2xl p-8 shadow-2xl border border-accent mb-8">
+            <div class="flex flex-col md:flex-row gap-4">
+                <input
+                    type="tel"
+                    id="phoneInput"
+                    placeholder="Enter Moroccan phone number (+212XXXXXXXXX)"
+                    class="flex-1 px-6 py-4 bg-accent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-highlight focus:border-transparent text-lg"
+                >
+                <button
+                    id="lookupBtn"
+                    class="px-8 py-4 bg-gradient-to-r from-highlight to-red-500 hover:from-red-500 hover:to-highlight rounded-xl font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                    Lookup Network
+                </button>
+            </div>
+            <div id="errorMessage" class="mt-4 text-red-400 hidden"></div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="hidden">
+            <div class="bg-secondary rounded-2xl p-8 shadow-2xl border border-accent mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-center">Network Information</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-accent rounded-xl p-6">
+                        <h3 class="text-lg font-semibold mb-2">Phone Number</h3>
+                        <p id="displayNumber" class="text-2xl font-mono text-highlight"></p>
+                    </div>
+                    <div class="bg-accent rounded-xl p-6">
+                        <h3 class="text-lg font-semibold mb-2">Network Operator</h3>
+                        <div class="flex items-center gap-3">
+                            <div id="operatorIcon" class="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center text-sm font-bold"></div>
+                            <p id="operatorName" class="text-2xl font-bold text-highlight"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Placeholder -->
+        <div class="bg-secondary rounded-2xl p-8 shadow-2xl border border-accent">
+            <h2 class="text-2xl font-bold mb-6 text-center">Coverage Map</h2>
+            <div class="bg-accent rounded-xl h-96 flex items-center justify-center border-2 border-dashed border-gray-600">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-highlight rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-gray-400 text-lg">Interactive Coverage Map</p>
+                    <p class="text-gray-500 text-sm mt-2">Network coverage visualization coming soon</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
